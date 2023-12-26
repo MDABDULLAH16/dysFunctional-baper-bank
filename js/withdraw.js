@@ -11,6 +11,11 @@
 
 document.getElementById("btn-withdraw").addEventListener("click", function () {
   const newWithdrawAmount = getInputFieldValueById("withdraw-field");
+  //error handling
+  if (isNaN(newWithdrawAmount)) {
+    alert("please provide a number");
+    return;
+  }
   const previousWithdrawTotal = getTextElementValueById("withdraw-total");
   const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
   setTextElementValueById("withdraw-total", newWithdrawTotal);
